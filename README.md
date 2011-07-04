@@ -35,6 +35,11 @@ Install the dependencies.
     $ cd fserv
     $ pip install -r dependencies.txt
 
+Modify the ```development.ini``` file for your environment.
+
+    base_path = /the/path/to/your/local/directory
+    store_name = Plain-Text-Name
+
 Run the server.
 
     $ paster serve development.ini
