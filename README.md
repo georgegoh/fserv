@@ -3,6 +3,9 @@ fserv README
 
 fserv is a web file manager that is intuitive and simple to use.
 
+WARNING: This code is in a very early stage of development.
+Many features are still yet to be implemented.
+
 Features
 --------
 fserv is in a very early stage of development, and so has a
