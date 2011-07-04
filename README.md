@@ -13,13 +13,15 @@ limited feature-set.
 
 Set up
 ------
-1.  Create a virtualenv environment.
+Create a virtualenv environment.
+
     $ virtualenv --no-site-packages --distribute <directory>
-2.  Activate the virtualenv.
-```
-$ cd <directory>
-$ source ./bin/activate.sh
-```
+
+Activate the virtualenv.
+
+    $ cd <directory>
+    $ source ./bin/activate.sh
+
 3.  Check out fserv into the virtualenv directory.
 ```
 $ cd <directory
