@@ -22,19 +22,19 @@ Activate the virtualenv.
     $ cd <directory>
     $ source ./bin/activate.sh
 
-3.  Check out fserv into the virtualenv directory.
-```
-$ cd <directory
-$ git clone git://github.com/georgegoh/fserv.git
-```
-4.  Install the dependencies.
-```
-$ pip install -r dependencies.txt
-```
-5.  Run the server.
-```
-$ paster serve development.ini
-```
+Check out fserv into the virtualenv directory.
+
+    $ cd <directory>
+    $ git clone git://github.com/georgegoh/fserv.git
+
+Install the dependencies.
+
+    $ cd fserv
+    $ pip install -r dependencies.txt
+
+Run the server.
+
+    $ paster serve development.ini
 
 TODO
 ----
