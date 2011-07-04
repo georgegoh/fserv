@@ -14,9 +14,7 @@ limited feature-set.
 Set up
 ------
 1.  Create a virtualenv environment.
-```
-$ virtualenv --no-site-packages --distribute <directory>
-```
+    $ virtualenv --no-site-packages --distribute <directory>
 2.  Activate the virtualenv.
 ```
 $ cd <directory>
