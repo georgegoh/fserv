@@ -3,6 +3,9 @@ fserv README
 
 fserv is a web file manager that is intuitive and simple to use.
 
+WARNING: This code is in a very early stage of development.
+Many features are still yet to be implemented.
+
 Features
 --------
 fserv is in a very early stage of development, and so has a
@@ -13,15 +16,33 @@ limited feature-set.
 
 Set up
 ------
-1.  Create a virtualenv environment.
-	$ virtualenv --no-site-packages --distribute <directory>
-2.  Activate the virtualenv.
-	$ <directory>/bin/activate.sh
-3.  Check out fserv into the virtualenv directory.
-4.  Install the dependencies.
-	$ pip install -r dependencies.txt
-5.  Run the server.
-	$ paster serve development.ini
+Create a virtualenv environment.
+
+    $ virtualenv --no-site-packages --distribute <directory>
+
+Activate the virtualenv.
+
+    $ cd <directory>
+    $ source ./bin/activate.sh
+
+Check out fserv into the virtualenv directory.
+
+    $ cd <directory>
+    $ git clone git://github.com/georgegoh/fserv.git
+
+Install the dependencies.
+
+    $ cd fserv
+    $ pip install -r dependencies.txt
+
+Modify the ```development.ini``` file for your environment.
+
+    base_path = /the/path/to/your/local/directory
+    store_name = Plain-Text-Name
+
+Run the server.
+
+    $ paster serve development.ini
 
 TODO
 ----

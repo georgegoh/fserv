@@ -11,7 +11,6 @@ WebError==0.10.3
 WebOb==1.0.8
 bpython==0.9.7.1
 distribute==0.6.15
-fserv==0.0
 pyramid==1.1a3
 pyramid-jinja2==1.0
 repoze.lru==0.3
