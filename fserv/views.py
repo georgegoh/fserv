@@ -1,5 +1,6 @@
 import os
 import json
+import urllib
 from pyramid.response import Response
 
 def my_view(context, request):
@@ -33,7 +34,7 @@ def home_view(context, request):
 
 
 def upload(context, request):
-    dest_path = os.path.join(context.basedir, request.params['dir'], request.params['file'].filename)
+    dest_path = os.path.join(context.basedir, urllib.unquote(request.params['dir']), request.params['file'].filename)
     print 'Destination path: ', dest_path
     bytes_read = 0
     with open(dest_path, 'w') as f:
@@ -52,14 +53,16 @@ def site_view(context, request):
     r=['<ul class="jqueryFileTree" style="display: none;">']
     try:
         r=['<ul class="jqueryFileTree" style="display: none;">']
-        d=request.params['dir']
+
+        requested_dir = urllib.unquote(request.params['dir'].strip('/')
+        d=requested_dir
         if not d.startswith(context.basedir):
-          d=os.path.join(context.basedir, request.params['dir'].strip('/'))
+          d=os.path.join(context.basedir, requested_dir)
         print "basedir: ", context.basedir
         print "listing directory: ", d
         for f in os.listdir(d):
             ff=os.path.join(d,f)
-            rel=os.path.join(request.params['dir'],f)
+            rel=os.path.join(requested_dir,f)
             if os.path.isdir(ff):
                 r.append('<li class="directory collapsed"><a href="#" rel="%s/">%s</a></li>' % (rel,f))
             else:

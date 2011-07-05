@@ -1,4 +1,6 @@
 import os
+import urllib
+
 
 class Root(object):
     def __init__(self, request):
@@ -20,7 +22,7 @@ class Root(object):
         newpath = self.curdir + '/' + name
         abs_newpath = self.basedir + '/' + newpath
         if os.path.isdir(abs_newpath):
-            self.curdir = newpath
+            self.curdir = urllib.unquote(newpath)
             self.dirs, self.files = os.walk(abs_newpath).next()[1:3]
         elif os.path.isfile(abs_newpath):
             self.downloadable = True
